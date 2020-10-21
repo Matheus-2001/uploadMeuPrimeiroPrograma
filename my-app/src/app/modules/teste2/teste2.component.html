@@ -1,0 +1,59 @@
+
+<div class="row">
+    <div class="col-12 text-center">
+        <h4>Formulario</h4>
+    </div>
+    
+</div>  
+
+<form [formGroup]="testeForm" class="example-form">
+    <div class="row">
+        <div class="col-12">      
+            <mat-form-field >
+                    <mat-label>Nome Completo</mat-label>
+                    <input formControlName="nome" matInput required>
+            </mat-form-field>
+        </div>
+        <div class="col-6">
+            <mat-form-field >
+                <mat-label>CPF</mat-label>
+                <input formControlName="cpf" matInput required placeholder="000.000.000-00">
+            </mat-form-field>
+        </div>
+        <div class="col-6">
+            <mat-form-field >
+                <mat-label>Data De Nascimento</mat-label>
+                <input formControlName="dob" matInput placeholder="00/00/0000">
+            </mat-form-field>
+       </div>
+       <div class="col-6">
+            <mat-radio-group formControlName="sex" aria-label="Select an option">
+                <mat-radio-button value="1">Masculino</mat-radio-button>
+                <mat-radio-button value="2">Feminino</mat-radio-button>
+            </mat-radio-group>
+        </div>   
+        <div class="col-6">
+            <mat-form-field appearance="fill">
+                <mat-label>Profissões</mat-label>
+                <mat-select formControlName="prof">
+                    <mat-option>selecione</mat-option>
+                    <mat-option value="1">Analista de sistemas</mat-option>
+                    <mat-option value="2">advogado</mat-option>     
+                </mat-select>
+            </mat-form-field>   
+        </div>      
+    </div>
+    <div class="row">
+        <div class="col-12 text-left">
+            <button type="submit" mat-flat-button color="primary" (click)="voltar()" [disabled]="!testeForm.valid">salvar</button>
+        </div>        
+    </div>
+
+</form>   
+   
+    
+<div class="row">
+    <div class="col-12 text-left">
+        <button mat-flat-button color="primary" routerLink="/home">home</button>
+    </div>        
+</div>
